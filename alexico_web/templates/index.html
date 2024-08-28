@@ -1,46 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analizador Lexico</title>  
+    <title>Analizador Léxico</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <div class="contenedor">
-        <!-- Formulario para ingresar el código -->
         <form method="POST">
             <div class="input-container">
-                <textarea name="code" class="code-input" placeholder="Inserta tu código aquí..."></textarea>
+                <textarea name="code" class="code-input" placeholder="Inserta tu código aquí...">{{ code }}</textarea>
             </div>
             <button type="submit" class="analyze-button">Analizar</button>
         </form>
-        
-        <div class="contenedor_2">
-            {% if tokens %}
-                {% for caracter, simbolo in tokens %}
-                    <p>{{ simbolo }}</p>
-                {% endfor %}
-            {% else %}
-                <p>No se encontraron tokens</p>
-            {% endif %}
-        </div>
         
         <div class="contenedor_tabla">
             <table>
                 {% if tokens %}
                     <tr>
-                        <th>Caracteres</th>
-                        <th>Simbolos</th>
+                        <th>Línea</th>
+                        <th>Tipo de Token</th>
+                        <th>Lexema</th>
                     </tr>
-                    {% for caracter, simbolo in tokens %}
+                    {% for tipo, valor, linea in tokens %}
                     <tr>
-                        <td><pre><code>{{ caracter }}</code></pre></td>
-                        <td><pre><code>{{ simbolo }}</code></pre></td>
+                        <td>{{ linea }}</td>
+                        <td>{{ tipo }}</td>
+                        <td><pre><code>{{ valor }}</code></pre></td>
                     </tr>
                     {% endfor %}
                 {% else %}
-                    <tr><td colspan="2">No se encontraron tokens</td></tr>
+                    <tr><td colspan="3">No se encontraron tokens</td></tr>
                 {% endif %}
             </table>
         </div>
