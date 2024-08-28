@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 20px;
 }
+
 .contenedor {
   max-width: 800px;
   margin: 0 auto;
@@ -12,11 +13,13 @@ body {
   flex-direction: column;
   gap: 20px;
 }
+
 .input-container {
   background-color: #2d2d2d;
   border-radius: 5px;
   padding: 10px;
 }
+
 .code-input {
   width: 97%;
   height: 200px;
@@ -28,6 +31,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   resize: vertical;
 }
+
 .analyze-button {
   margin-top: 20px;
   background-color: #28a745;
@@ -39,31 +43,59 @@ body {
   font-size: 16px;
   transition: background-color 0.3s;
 }
+
 .analyze-button:hover {
   background-color: #218838;
 }
+
 .contenedor_tabla {
   background-color: #2d2d2d;
   border-radius: 5px;
   padding: 10px;
   overflow-x: auto;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
 }
+
 th, td {
   text-align: left;
   padding: 8px;
   border-bottom: 1px solid #444;
 }
+
 th {
   background-color: #28a745;
   color: white;
 }
+
 tr:nth-child(even) {
   background-color: #3a3a3a;
 }
+
 pre {
-  margin: 0;
+  margin: 0%;
+}
+
+/* Estilo para el cuadro de texto del contador de tokens */
+.contenedor_contador {
+  background-color: #2d2d2d;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.token-count-display {
+  width: 97%;
+  height: 150px;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  border: 1px solid #444;
+  border-radius: 3px;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre;
+  overflow-wrap: break-word;
+  resize: none;
 }

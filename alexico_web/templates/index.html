@@ -35,6 +35,20 @@
                 {% endif %}
             </table>
         </div>
+
+        <!-- Sección para el contador de tokens repetidos -->
+        <div class="contenedor_contador">
+            <h3>Contador de Tokens Repetidos</h3>
+            <textarea class="token-count-display" readonly>
+                {% if token_count %}
+                    {% for tipo, count in token_count.items() %}
+                        {{ tipo }}: {{ count }}
+                    {% endfor %}
+                {% else %}
+                    No hay tokens analizados.
+                {% endif %}
+            </textarea>
+        </div>
     </div>
 </body>
 </html>
